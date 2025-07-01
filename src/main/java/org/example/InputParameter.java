@@ -1,9 +1,9 @@
 package org.example;
 
-public class InputParameters {
+public class InputParameter {
     private final String folderPath;
 
-    public InputParameters(String folderPath) {
+    public InputParameter(String folderPath) {
         this.folderPath = folderPath;
     }
 

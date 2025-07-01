@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-        InputParameters parameters = InputHandler.getInputParameters();
+        InputParameter parameters = InputHandler.getInputParameters();
 
         if (!FileCreator.validatePath(parameters.getFolderPath())) {
             System.out.println("Некорректный путь к папке");

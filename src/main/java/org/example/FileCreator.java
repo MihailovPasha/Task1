@@ -14,7 +14,7 @@ public class FileCreator {
                     }""";
 
     public static void createNewFile(String folderPath) throws IOException {
-        scanDirectory(new File(folderPath));
+        deployFilesRecursively(new File(folderPath));
     }
 
     public static boolean validatePath(String folderPath) {
@@ -22,11 +22,11 @@ public class FileCreator {
         return file.exists() && file.isDirectory();
     }
 
-    private static void scanDirectory(File directory) throws IOException {
+    private static void deployFilesRecursively(File directory) throws IOException {
         File[] subDirectories = directory.listFiles(File::isDirectory);
         if (subDirectories != null && subDirectories.length > 0) {
             for (File file : subDirectories) {
-                scanDirectory(file);
+                deployFilesRecursively(file);
                 System.out.println(file);
             }
         } else {
